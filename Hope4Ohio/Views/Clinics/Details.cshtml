@@ -4,63 +4,82 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+    <h2>Details</h2>
 
-<div>
-    <h4>Clinic</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+    <div>
+        <h4>Clinic</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Website)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Website)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Website)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Website)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TotalBeds)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.TotalBeds)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TotalBeds)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.TotalBeds)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.OpenBeds)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.OpenBeds)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.OpenBeds)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.OpenBeds)
+            </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ClinicId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </dl>
+    </div>
+
+    <!--If statement for if beds are open or not-->
+    <div>
+        @{ string openBeds = (Model.OpenBeds);}
+        @{ string TotalBeds = (Model.TotalBeds);}
+        @{ int.Parse(openBeds);}
+        @{ int.Parse(TotalBeds);}
+        @if (openBeds == TotalBeds)
+        {
+            <button type="button" class="btn btn-primary btn-block">All Beds Are Currently Taken, Please Call for An Appointment</button>
+        }
+        else
+        {
+            <button type="button" class="btn btn-primary btn-block">Reserve a Bed</button>
+        }
+
+
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ClinicId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
