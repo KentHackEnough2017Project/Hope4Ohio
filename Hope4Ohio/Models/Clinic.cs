@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,7 +8,9 @@ namespace Hope4Ohio.Models
 {
     public class Clinic
     {
+        [Key]
         public int ClinicId { get; set; }
+
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
