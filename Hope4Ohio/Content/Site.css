@@ -42,3 +42,8 @@ textarea {
 p a{
     color:white;
 }
+
+imgFit{
+    max-height:100px;
+    max-width:100px;
+}
