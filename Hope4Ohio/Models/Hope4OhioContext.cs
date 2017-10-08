@@ -23,6 +23,5 @@ namespace Hope4Ohio.Models
 
         public System.Data.Entity.DbSet<Hope4Ohio.Models.Patient> Patients { get; set; }
 
-        public System.Data.Entity.DbSet<Hope4Ohio.Models.Client> Clients { get; set; }
     }
 }
