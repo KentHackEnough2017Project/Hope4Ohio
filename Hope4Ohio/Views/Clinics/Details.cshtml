@@ -69,11 +69,12 @@
         @{ int.Parse(TotalBeds);}
         @if (openBeds == TotalBeds)
         {
-            <button type="button" class="btn btn-primary btn-block">All Beds Are Currently Taken, Please Call for An Appointment</button>
+            <button type="button" class="btn btn-primary btn-block">All beds are currently taken, Please call the clinic or goto the cloest E.R. if this is an emergency</button>
         }
         else
         {
-            <button type="button" class="btn btn-primary btn-block">Reserve a Bed</button>
+            @*<button type="button" class="btn btn-primary btn-block">Reserve a Bed</button>*@
+            <p><a class="btn btn-primary btn-block" href="~/Views/Patients/Create.cshtml">Reserve a Bed Now &raquo;</a></p>
         }
 
 

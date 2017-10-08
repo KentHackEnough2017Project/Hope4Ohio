@@ -55,7 +55,7 @@ namespace Hope4Ohio.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(patient);
+            return View(patient); //change this to direct to the new page
         }
 
         // GET: Patients/Edit/5
